@@ -24,12 +24,6 @@ for i in range(len(image)):
   fits.writeto('image'+str(i)+'.fits', data, hdr, overwrite=True) 
   mimage.append('image'+str(i)+'.fits')
 
-'''
-# Reference header for output maps
-for i in range(len(freq)):
-	if ref == freq[i]: ref_image = cimage[i]
-	else: continue
-'''
 
 # Spectral Index Map making
 ref_hdr = getheader(mimage[0])
@@ -51,7 +45,7 @@ for i in range(len(mimage)-1):
   # calculate spix err
   delta_S0 = np.sqrt( rms[i]**2 + (f_err[i] * data0)**2 )
   delta_S1 = np.sqrt( rms[i+1]**2 + (f_err[i+1] * data1)**2 )
-  delta_alpha = (1.0/np.log(freq[i]/freq[i+1])) * np.sqrt( (delta_S0/data0)**2 + (delta_S1/data1)**2 )
+  delta_alpha = (1.0/abs(np.log(freq[i]/freq[i+1]))) * np.sqrt( (delta_S0/data0)**2 + (delta_S1/data1)**2 )
   # mask +ve alpha value pixels
   mask = np.isnan(alpha)
   delta_alpha[mask] = np.nan
