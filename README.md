@@ -1,4 +1,4 @@
-# spix_map
+# spix and curvature map making
 Make spectral index and curvature maps from two or more FITS images \
 Run on Conda 2 or 3 \
 required: numpy version > 1.12.0 \
