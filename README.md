@@ -1,8 +1,8 @@
 # spix_map
-Make spectral index and curvature maps from two or more FITS images
-Run on Conda 2 or 3; 
-required: numpy version > 1.12.0
-required: astropy
+Make spectral index and curvature maps from two or more FITS images \
+Run on Conda 2 or 3; \
+required: numpy version > 1.12.0 \
+required: astropy \
 
 Instructions:
 1. Edit the 'spix_map_NEW.py' file and provide the inputs. make sure to keep the image and other informations in the same order in the List.
